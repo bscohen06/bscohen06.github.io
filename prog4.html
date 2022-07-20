@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>prog4</title>
+    <script src="CMSC198RLibrary.js"></script>
+    <style>
+      table td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      "use strict";
+      let f = 1;
+
+      let max = Number(prompt("numbers to be squared: "));
+
+      let table, row;
+      let i = 2;
+      table = "<table>";
+      while (i <= max) {
+        let e = Math.pow(i, 2);
+        row = "<tr>";
+        row += "<td>";
+        row += i;
+        row += "</td>";
+        row += "<td>";
+        row += e;
+        row += "</td>";
+        row += "</tr>";
+        table += row;
+        i++;
+      }
+      table += "</table>";
+      document.writeln(table);
+    </script>
+  </body>
+</html>

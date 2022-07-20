@@ -1,0 +1,31 @@
+body{
+    background-color: tan;
+}
+.center{
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+#color{
+    color: brown;
+}
+.para:hover{
+    color: green;
+}
+a:link{
+    
+    color: yellow;
+    text-decoration: none;  
+}
+a:visited{
+    
+    color: blue;
+    text-decoration: none;  
+}
+a:active{
+    color: pink;
+    text-decoration: none;    
+}
+table, th, td{
+    border: 1px solid;
+}

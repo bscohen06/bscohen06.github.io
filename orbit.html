@@ -2,38 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-       <link rel="stylesheet" href="mainstyle.css">
-    <title>base 10 converter</title>
-  
+     <link rel="stylesheet" href="mainstyle.css">
+    <title>prog4</title>
+    <script src="CMSC198RLibrary.js"></script>
+    <style>
+      table td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
   </head>
 
   <body>
-    <a href="index.html">back to main</a><br>
+     <a href="index.html">back to main</a><br>
     <script>
       "use strict";
-      //I should probably use better variable names
-      let baseprompt = prompt("type base, base must be 2 8 10 16: ");
-      let numberprompt = prompt("type base 10 number to convert to new base:");
-      let numpromptint = Number(numberprompt);
-      let basepromptint = Number(baseprompt);
-      if (
-        basepromptint == 2 ||
-        basepromptint == 8 ||
-        basepromptint == 10 ||
-        basepromptint == 16
-      ) {
-        1 == 1;
-      } else {
-        alert("base not allowed");
-        location.reload();
+      let f = 1;
+
+      let max = Number(prompt("period in degrees"));
+
+      let table, row;
+      let i = 2;
+      table = "<table>";
+      while (i <= max) {
+        let e = Math.pow(i, 2);
+        row = "<tr>";
+        row += "<td>";
+        row += i;
+        row += "</td>";
+        row += "<td>";
+        row += e;
+        row += "</td>";
+        row += "</tr>";
+        table += row;
+        i++;
       }
-      let converted = numpromptint.toString(basepromptint);
-      let numorginal = numpromptint.toString(10);
-      let baseorginal = basepromptint.toString(10);
-      document.writeln("base 10 converter<br>");
-      document.writeln(
-        numorginal + " in base " + baseorginal + ": " + converted
-      );
+      table += "</table>";
+      document.writeln(table);
     </script>
   </body>
 </html>

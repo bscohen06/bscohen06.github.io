@@ -17,14 +17,15 @@
       
       let basepromptint = Number(baseprompt);
       
-      let converted = (6*basepromptint)/90; 
+      let converted = (6*basepromptint)/90;
+      let converted2 = (360*basepromptint)/90;
       let numorginal = converted.toString(10);
-      
+      let numorginal2 = converted2.toString(10);
       document.writeln("base 10 converter<br>");
       document.writeln(
        numorginal+"e"
       );
-      document.writeln("<table><tr><td></td><td>hours</td><td>minutes</td></tr><tr><td>time</td><td>"+numorginal+"test2</td><td>test3</td></tr></table>")
+      document.writeln("<table><tr><td></td><td>hours</td><td>minutes</td></tr><tr><td>time</td><td>"+numorginal+"</td><td>"+numorginal2+"</td></tr></table>")
     </script>
   </body>
 </html>

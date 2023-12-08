@@ -11,59 +11,50 @@
     <a href="index.html">back to main</a><br>
     <script>
       "use strict";
-       let firstbase = prompt("type first base, base must be 2 8 10 16: ");
+        let firstbase = prompt("type first base, base must be 2 8 10 16: ");
 let secondbase = prompt("type second base, base must be 2 8 10 16: ");
 let num = prompt("number to convert: ");
-if (
-  firstbase == 2 ||
-  firstbase == 8 ||
-  firstbase == 10 ||
-  firstbase == 16 ||
-  secondbase == 2 ||
-  secondbase == 8 ||
-  secondbase == 10 ||
-  secondbase == 16
-) {
-  1 == 1;
-} else {
-  alert("base not allowed");
-  location.reload();
+switch (true) {
+  case (firstbase == 2 || 
+        firstbase == 8 || 
+        firstbase == 10 || 
+        firstbase == 16 ||
+        secondbase == 2 || 
+        secondbase == 8 ||
+        secondbase == 10 || 
+        secondbase == 16):
+    1 == 1;
+    break;
+  default:
+    alert("base not allowed");
+    location.reload();
+    break;
 }
-if(firstbase == 2 && secondbase == 8){
-document.writeln(parseInt(num, 2).toString(8));
-}
-if(firstbase == 2 && secondbase == 10){
-document.writeln(parseInt(num, 2).toString(10));
-}
-if(firstbase == 2 && secondbase == 16){
-document.writeln(parseInt(num, 2).toString(16));
-}
-if(firstbase == 8 && secondbase == 2){
-document.writeln(parseInt(num, 8).toString(2));
-}
-if(firstbase == 8 && secondbase == 10){
-document.writeln(parseInt(num, 8).toString(10));
-}
-if(firstbase == 8 && secondbase == 16){
-document.writeln(parseInt(num, 8).toString(16));
-}
-if(firstbase == 10 && secondbase == 2){
-document.writeln(parseInt(num, 10).toString(2));
-}
-if(firstbase == 10 && secondbase == 8){
-document.writeln(parseInt(num, 10).toString(8));
-}
-if(firstbase == 10 && secondbase == 16){
-document.writeln(parseInt(num, 10).toString(16));
-}
-if(firstbase == 16 && secondbase == 2){
-document.writeln(parseInt(num, 16).toString(2));
-}
-if(firstbase == 16 && secondbase == 8){
-document.writeln(parseInt(num, 16).toString(8));
-}
-if(firstbase == 16 && secondbase == 10){
-document.writeln(parseInt(num, 16).toString(10));
+const conversions = {
+  "2": {
+    "8": (num) => parseInt(num, 2).toString(8),
+    "10": (num) => parseInt(num, 2).toString(10),
+    "16": (num) => parseInt(num, 2).toString(16)
+  },
+  "8": {
+    "2": (num) => parseInt(num, 8).toString(2),
+    "10": (num) => parseInt(num, 8).toString(10),
+    "16": (num) => parseInt(num, 8).toString(16)
+  },
+  "10": {
+    "2": (num) => parseInt(num, 10).toString(2),
+    "8": (num) => parseInt(num, 10).toString(8),
+    "16": (num) => parseInt(num, 10).toString(16)
+  },
+  "16": {
+    "2": (num) => parseInt(num, 16).toString(2),
+    "8": (num) => parseInt(num, 16).toString(8),
+    "10": (num) => parseInt(num, 16).toString(10)
+  }
+};
+
+if (conversions[firstbase] && conversions[firstbase][secondbase]) {
+  document.writeln(conversions[firstbase][secondbase](num));
 }
 
     </script>

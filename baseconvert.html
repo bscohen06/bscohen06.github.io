@@ -11,7 +11,7 @@
     <a href="index.html">back to main</a><br>
     <script>
       "use strict";
-        let firstbase = prompt("type first base, base must be 2 8 10 16: ");
+         let firstbase = prompt("type first base, base must be 2 8 10 16: ");
 let secondbase = prompt("type second base, base must be 2 8 10 16: ");
 let num = prompt("number to convert: ");
 switch (true) {
@@ -54,7 +54,7 @@ const conversions = {
 };
 
 if (conversions[firstbase] && conversions[firstbase][secondbase]) {
-  document.writeln(conversions[firstbase][secondbase](num));
+  document.writeln(num+" In Base "+ secondbase + " converted from base " + firstbase +" is " +conversions[firstbase][secondbase](num));
 }
 
     </script>
